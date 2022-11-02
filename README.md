@@ -1,26 +1,48 @@
-# Web Phishing Detection :female_detective:
+<p>
+  <h1 align="center"><b>Web Phishing Detection :female_detective:</h1>
+</p>
 
-#### Category: Machine Learning
+<p>
+  <h2 align="center"> Category: Machine Learning</h2>
+</p>
 
-## :octocat: Project Description:
+## Objective
 
-There are a number of users who purchase products online and make payments through e-banking. There are e-banking websites that ask users to provide sensitive data such as username, password & credit card details, etc., often for malicious reasons. This type of e-banking website is known as a phishing website. Web service is one of the key communications software services for the Internet. Web phishing is one of many security threats to web services on the Internet. 
+A phishing website is a common social engineering method that mimics trustful uniform resource locators (URLs) and webpages. The objective of this project is to train machine learning models on the dataset given to predict phishing websites. Both phishing and benign URLs of websites are gathered to form a dataset and from them required URL and website content-based features are extracted. The performance level of each model is measured and compared.
 
-Common threats of web phishing:
+## Data Collection and Analysis
 
-- Web phishing aims to steal private information, such as usernames, passwords, and credit card details, by way of impersonating a legitimate entity.
+The given [data](https://github.com/IBM-EPBL/IBM-Project-14297-1659548839/blob/main/final%20deliverables/data/dataset_website.csv) contains both phishing and benign URLs of websites with various website content-based features. 
 
-- It will lead to information disclosure and property damage.
+The above mentioned dataset is uploaded to the 'final deliverables/data' folder of this repository.
 
-- Large organizations may get trapped in different kinds of scams.
+From data distribution graph and correlation matrix, we can conclude that the 16 of the given features do not have much impact on the result. So they are removed from further processing. The final set of features that are used to build the model are shown in the figure below.
 
-This project mainly focuses on applying a machine-learning algorithm to detect Phishing websites.
+![final_features](https://user-images.githubusercontent.com/64459672/199578614-f8cb7f81-9da0-43a8-b6eb-5381970a9768.png)
 
-In order to detect and predict e-banking phishing websites, we proposed an intelligent, flexible and effective system that is based on using classification algorithms.  We implemented classification algorithms and techniques to extract the phishing datasets criteria to classify their legitimacy. The e-banking phishing website can be detected based on some important characteristics like URL and domain identity, and security and encryption criteria in the final phishing detection rate. Once a user makes a transaction online when he makes payment through an e-banking website our system will use a data mining algorithm to detect whether the e-banking website is a phishing website or not.
 
-## :two_women_holding_hands: Team Members:
+## Models & Training
+
+Before stating the ML model training, the data is split into 80-20 i.e., 8844 training samples & 2211 testing samples. From the dataset, it is clear that this is a supervised machine learning task. There are two major types of supervised machine learning problems, called classification and regression.
+
+This data set comes under classification problem, as the input URL is classified as phishing (1) or legitimate (0). The supervised machine learning models (classification) considered to train the dataset in this project are:
+
+- Decision Tree
+- Random Forest
+- XGBoost
+- Support Vector Machines
+
+All these models are trained on the dataset and evaluation of the model is done with the test dataset. The elaborate details of the models & its training are mentioned in [Phishing_Website_Detection.ipynb](https://github.com/IBM-EPBL/IBM-Project-14297-1659548839/blob/main/final%20deliverables/preprocessing%20%26%20model%20building/Phishing_Website_Detection.ipynb).
+
+## End Results
+
+From the obtained results of the above models, XGBoost Classifier has highest model performance of 92.3%. So the model is saved to the file [XGBoostClassifier.pickle.dat](https://github.com/IBM-EPBL/IBM-Project-14297-1659548839/blob/main/final%20deliverables/preprocessing%20%26%20model%20building/XGBoostClassifier.pickle.dat).
+
+## Team Members
 
 - [@Shekinah](https://github.com/sheki018) (Team Lead)
 - [@Akshaya](https://github.com/Akxshaya)
 - [@Amala](https://github.com/Amala-29)
 - [@Annie](https://github.com/ANNIEMARLENENIKITA)
+
+Team ID: PNT2022TMID27489
